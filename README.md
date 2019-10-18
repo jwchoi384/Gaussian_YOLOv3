@@ -48,6 +48,15 @@ For training, you must make image list file (*e.g.,* "train_bdd_list.txt") and g
 
 Download pre-trained weights [darknet53.conv.74](http://pjreddie.com/media/files/darknet53.conv.74)
 
+Download the code
+```Swift
+git clone https://github.com/jwchoi384/Gaussian_YOLOv3
+```
+
+```Swift
+cd Gaussian_YOLOv3
+```
+
 Compile the code
 ```Swift
 make
