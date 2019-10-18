@@ -1,3 +1,5 @@
+// Added some functions related to Gaussian YOLOv3
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
