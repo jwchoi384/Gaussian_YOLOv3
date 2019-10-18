@@ -1,3 +1,4 @@
+//Gaussian YOLOv3 implementation
 #include "gaussian_yolo_layer.h"
 #include "activations.h"
 #include "blas.h"
