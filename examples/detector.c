@@ -132,7 +132,7 @@ void train_detector(char *datacfg, char *cfgfile, char *weightfile, int *gpus, i
         if(l.random && count++%10 == 0){
             printf("Resizing\n");
             // int dim = (rand() % 10 + 10) * 32;
-            int dim = (rand() % 10 + 12) * 32;
+            int dim = (rand() % 10 + 12) * 32;  // resize range changed
             if (get_current_batch(net)+200 > net->max_batches) dim = 608;
             //int dim = (rand() % 4 + 16) * 32;
             printf("%d\n", dim);
