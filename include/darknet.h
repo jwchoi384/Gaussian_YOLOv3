@@ -1,3 +1,5 @@
+// Added variable related to Gaussian YOLOv3
+
 #ifndef DARKNET_API
 #define DARKNET_API
 #include <stdlib.h>
