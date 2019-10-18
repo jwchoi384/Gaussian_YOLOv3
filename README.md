@@ -3,7 +3,7 @@ This repository contains the code for our **ICCV 2019** [Paper](https://arxiv.or
 
 The proposed algorithm is implemented based on the [YOLOv3 official code](https://github.com/pjreddie/darknet).
 
-<img src="https://user-images.githubusercontent.com/56669525/67031779-37a75600-f14d-11e9-812c-aa14fd646400.png" width="100%">
+<img src="https://user-images.githubusercontent.com/56669525/67075282-d2dc1200-f1c5-11e9-8af9-9f874e89197d.png" width="100%">
 
 *The provided weight file ("[Gaussian_yolov3_BDD.weights](https://drive.google.com/open?id=1Eutnens-3z6o4LYe0PZXJ1VYNwcZ6-2Y)") is not the weight file used in the paper, but newly trained weight for release code validation. Because this weight file is more accurate than the weight used in the paper, we provide this file in the repository.*
 
