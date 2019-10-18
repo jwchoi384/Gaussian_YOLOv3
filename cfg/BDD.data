@@ -1,0 +1,7 @@
+classes= 10
+train  = train_bdd_list.txt
+valid = val_bdd_list.txt
+#valid  = test_bdd_list.txt
+names = data/bdd.names
+backup = backup
+eval = bdd
