@@ -3,7 +3,7 @@ This repository contains the code for our **ICCV 2019** [Paper](https://arxiv.or
 
 <img src="https://user-images.githubusercontent.com/56669525/67031779-37a75600-f14d-11e9-812c-aa14fd646400.png" width="100%">
 
-*The uploaded weight file ("weight/Gaussian_yolov3_BDD.weights") is not the weight file used in the paper, but newly trained weight for release code validation. Because this weight file is more accurate than the weight used in the paper, we provide this file in the repository.*
+*The provided weight file ("[Gaussian_yolov3_BDD.weights](https://drive.google.com/open?id=1Eutnens-3z6o4LYe0PZXJ1VYNwcZ6-2Y)") is not the weight file used in the paper, but newly trained weight for release code validation. Because this weight file is more accurate than the weight used in the paper, we provide this file in the repository.*
 
 Citation
 --------
@@ -62,8 +62,11 @@ If you want to use multiple gpus,
 
 Inference
 ---------
+Download the Gaussian_YOLOv3 example weight file. [Gaussian_yolov3_BDD.weights](https://drive.google.com/open?id=1Eutnens-3z6o4LYe0PZXJ1VYNwcZ6-2Y)
+
+Run the following commands.
 1. `make`
-2. `./darknet detector test cfg/BDD.data cfg/Gaussian_yolov3_BDD.cfg weight/Gaussian_yolov3_BDD.weights data/example.jpg`
+2. `./darknet detector test cfg/BDD.data cfg/Gaussian_yolov3_BDD.cfg Gaussian_yolov3_BDD.weights data/example.jpg`
 
 You can see the result:
 
@@ -71,10 +74,12 @@ You can see the result:
 
 Evaluation
 ----------
-Run the following command. You can get a detection speed of more than 42 FPS.
+Download the Gaussian_YOLOv3 example weight file. [Gaussian_yolov3_BDD.weights](https://drive.google.com/open?id=1Eutnens-3z6o4LYe0PZXJ1VYNwcZ6-2Y)
+
+Run the following commands. You can get a detection speed of more than 42 FPS.
 1. `make`
 
-2. `./darknet detector valid cfg/BDD.data cfg/Gaussian_yolov3_BDD.cfg weight/Gaussian_yolov3_BDD.weights`
+2. `./darknet detector valid cfg/BDD.data cfg/Gaussian_yolov3_BDD.cfg Gaussian_yolov3_BDD.weights`
 
 3. `cd bdd_evaluation/`
 
@@ -102,7 +107,7 @@ mAP 19.77 (512 x 512 input resolution)
 If you want to get the mAP for BDD test set, 
 1. `make`
 2. `Change the list file in cfg file ("val_bdd_list.txt" --> "test_bdd_list.txt" in "cfg/BDD.data")`
-3. `./darknet detector valid cfg/BDD.data cfg/Gaussian_yolov3_BDD.cfg weight/Gaussian_yolov3_BDD.weights`
+3. `./darknet detector valid cfg/BDD.data cfg/Gaussian_yolov3_BDD.cfg Gaussian_yolov3_BDD.weights`
 4. `Upload result file ("results/bdd_results.json") on BDD evaluation server` [Link](https://bdd-data.berkeley.edu/portal.html)
 
 On the BDD test set, we got 19.2 mAP (512 x 512 input resolution).
