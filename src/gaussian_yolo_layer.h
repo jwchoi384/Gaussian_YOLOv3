@@ -1,3 +1,4 @@
+//Gaussian YOLOv3 implementation
 #ifndef GAUSSIAN_YOLO_LAYER_H
 #define GAUSSIAN_YOLO_LAYER_H
 
