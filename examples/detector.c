@@ -3,6 +3,36 @@
 
 static int coco_ids[] = {1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24,25,27,28,31,32,33,34,35,36,37,38,39,40,41,42,43,44,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,67,70,72,73,74,75,76,77,78,79,80,81,82,84,85,86,87,88,89,90};
 
+static void print_kitti_detections(FILE **fps, char *id, detection *dets, int total, int classes, int w, int h, char *outfile, char *prefix)
+{
+    char *kitti_ids[] = {"car", "pedestrian", "cyclist"};
+    FILE *fpd = 0;
+    char buffd[1024];
+    snprintf(buffd, 1024, "%s/%s/data/%s.txt", prefix, outfile, id);
+
+    fpd = fopen(buffd, "w");
+    int i, j;
+    for(i = 0; i < total; ++i)
+    {
+        float xmin = dets[i].bbox.x - dets[i].bbox.w/2.;
+        float xmax = dets[i].bbox.x + dets[i].bbox.w/2.;
+        float ymin = dets[i].bbox.y - dets[i].bbox.h/2.;
+        float ymax = dets[i].bbox.y + dets[i].bbox.h/2.;
+
+        if (xmin < 0) xmin = 0;
+        if (ymin < 0) ymin = 0;
+        if (xmax > w) xmax = w;
+        if (ymax > h) ymax = h;
+
+        for(j = 0; j < classes; ++j)
+        {
+            //if (dets[i].prob[j]) fprintf(fpd, "%s 0 0 0 %f %f %f %f -1 -1 -1 -1 0 0 0 %f\n", kitti_ids[j], xmin, ymin, xmax, ymax, dets[i].prob[j]);
+            if (dets[i].prob[j]) fprintf(fpd, "%s -1 -1 -10 %f %f %f %f -1 -1 -1 -1000 -1000 -1000 -10 %f\n", kitti_ids[j], xmin, ymin, xmax, ymax, dets[i].prob[j]);
+        }
+    }
+    fclose(fpd);
+}
+
 static void eliminate_bdd(char *buf, char *a)
 {
     int n=0;
@@ -461,7 +491,8 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
     int coco = 0;
     int imagenet = 0;
     int bdd = 0;
-
+    int kitti = 0;
+    
     if(0==strcmp(type, "coco")){
         if(!outfile) outfile = "coco_results";
         snprintf(buff, 1024, "%s/%s.json", prefix, outfile);
@@ -474,6 +505,15 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
         fp = fopen(buff, "w");
         fprintf(fp, "[\n");
         bdd = 1;
+    } else if(0==strcmp(type, "kitti")){
+        char buff2[1024];
+        if(!outfile) outfile = "kitti_results";
+        printf("%s\n",outfile);
+        snprintf(buff,1024,"%s/%s",prefix,outfile);
+        int mkd = mkdir(buff, 0777);
+        snprintf(buff2,1024,"%s/%s/data", prefix,outfile);
+        int mkd2 = mkdir(buff2, 0777);
+        kitti = 1;
     } else if(0==strcmp(type, "imagenet")){
         if(!outfile) outfile = "imagenet-detection";
         snprintf(buff, 1024, "%s/%s.txt", prefix, outfile);
@@ -546,6 +586,8 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
                 print_imagenet_detections(fp, i+t-nthreads+1, dets, nboxes, classes, w, h);
             } else if (bdd){
                 print_bdd_detections(fp, path, dets, nboxes, classes, w, h);
+            } else if (kitti){ 
+                print_kitti_detections(fps, id, dets, nboxes, classes, w, h, outfile, prefix);
             } else {
                 print_detector_detections(fps, id, dets, nboxes, classes, w, h);
             }
