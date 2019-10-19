@@ -81,6 +81,8 @@ Inference
 ---------
 Download the Gaussian_YOLOv3 example weight file. [Gaussian_yolov3_BDD.weights](https://drive.google.com/open?id=1Eutnens-3z6o4LYe0PZXJ1VYNwcZ6-2Y)
 
+Set batch=1 and subdivisions=1 in the cfg file.
+
 Run the following commands.
 1. `make`
 2. `./darknet detector test cfg/BDD.data cfg/Gaussian_yolov3_BDD.cfg Gaussian_yolov3_BDD.weights data/example.jpg`
