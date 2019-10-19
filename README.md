@@ -59,15 +59,14 @@ git clone https://github.com/jwchoi384/Gaussian_YOLOv3
 cd Gaussian_YOLOv3
 ```
 
-Set batch=64 and subdivisions=16 in the cfg file.
-
-*We used 4 gpus in our experiment. If your computer runs out of GPU memory when training, please increase subdivision size in the cfg file.* 
-
-
 Compile the code
 ```Swift
 make
 ```
+
+Set batch=64 and subdivisions=16 in the cfg file.
+
+*We used 4 gpus in our experiment. If your computer runs out of GPU memory when training, please increase subdivision size in the cfg file.* 
 
 Start training by using the command line
 ```Swift
