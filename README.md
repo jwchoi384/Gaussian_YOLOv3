@@ -1,7 +1,7 @@
 # Gaussian YOLOv3: An Accurate and Fast Object Detector Using Localization Uncertainty for Autonomous Driving
 **[Gaussian YOLOv3 implementation](https://github.com/jwchoi384/Gaussian_YOLOv3)**
 
-This repository contains the code for our **ICCV 2019** [Paper](https://arxiv.org/abs/1904.04620)
+This repository contains the code for our **ICCV 2019** [Paper](http://openaccess.thecvf.com/content_ICCV_2019/html/Choi_Gaussian_YOLOv3_An_Accurate_and_Fast_Object_Detector_Using_Localization_ICCV_2019_paper.html)
 
 The proposed algorithm is implemented based on the [YOLOv3 official code](https://github.com/pjreddie/darknet).
 
@@ -17,7 +17,7 @@ Citation
 author = {Choi, Jiwoong and Chun, Dayoung and Kim, Hyun and Lee, Hyuk-Jae},
 title = {Gaussian YOLOv3: An Accurate and Fast Object Detector Using Localization Uncertainty for Autonomous Driving},
 booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
-month = {Oct},
+month = {October},
 year = {2019}
 }
 ```
