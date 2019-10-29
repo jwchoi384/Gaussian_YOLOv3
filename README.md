@@ -9,9 +9,12 @@ The proposed algorithm is implemented based on the [YOLOv3 official code](https:
 
 *The provided example weight file ("[Gaussian_yolov3_BDD.weights](https://drive.google.com/open?id=1Eutnens-3z6o4LYe0PZXJ1VYNwcZ6-2Y)") is not the weight file used in the paper, but newly trained weight for release code validation. Because this weight file is more accurate than the weight used in the paper, we provide this file in the repository.*
 
+Poster
+------
+<img src="https://user-images.githubusercontent.com/56669525/67777222-c64c9900-faa4-11e9-861d-4ea3b36db986.PNG" width="100%">
+
 Citation
 --------
-**We will present on October 29, 2019.**
 ```
 @InProceedings{Choi_2019_ICCV,
 author = {Choi, Jiwoong and Chun, Dayoung and Kim, Hyun and Lee, Hyuk-Jae},
