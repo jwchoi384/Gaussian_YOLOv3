@@ -138,6 +138,10 @@ If you want to get the mAP for BDD test set,
 On the BDD test set, we got 19.2 mAP (512 x 512 input resolution).
 
 
+Third-party implementations
+-------
+* Keras implementation: [xuannianz/keras-GaussianYOLOv3](https://github.com/xuannianz/keras-GaussianYOLOv3)
+
 Contact
 -------
 For questions about our paper or code, please contact Jiwoong Choi. 
