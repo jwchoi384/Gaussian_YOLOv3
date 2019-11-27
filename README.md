@@ -141,6 +141,7 @@ On the BDD test set, we got 19.2 mAP (512 x 512 input resolution).
 Third-party implementations
 -------
 * Keras implementation: [xuannianz/keras-GaussianYOLOv3](https://github.com/xuannianz/keras-GaussianYOLOv3)
+* PyTorch implementation: [motokimura/PyTorch_Gaussian_YOLOv3](https://github.com/motokimura/PyTorch_Gaussian_YOLOv3)
 
 Contact
 -------
