@@ -70,6 +70,9 @@ static void get_bdd_image_id(char *filename)
 
 static void print_bdd_detections(FILE *fp, char *image_path, detection *dets, int num_boxes, int classes, int w, int h)
 {
+#ifdef KITTI_to_BDD    
+    char *bdd_ids[] = {"car", "pedestrian", "cyclist"};
+#endif
     char *bdd_ids[] = {"bike" , "bus" , "car" , "motor" ,"person", "rider", "traffic light", "traffic sign", "train", "truck"};
     get_bdd_image_id(image_path);
     int i, j;
