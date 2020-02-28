@@ -585,8 +585,10 @@ detection *get_network_boxes(network *net, int w, int h, float thresh, float hie
 void free_detections(detection *dets, int n)
 {
     int i;
-    for(i = 0; i < n; ++i){
+    for(i = 0; i < n; ++i)
+    {
         free(dets[i].prob);
+	free(dets[i].uc);
         if(dets[i].mask) free(dets[i].mask);
     }
     free(dets);
