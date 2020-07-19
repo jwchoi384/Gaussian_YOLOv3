@@ -537,7 +537,7 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
     int i=0;
     int t;
 
-    float thresh = 0.005;
+    float thresh = 0.005; // In our paper, I posted mAP results of BDD and KITTI dataset using th=0.001.
     float nms = .45;
 
     int nthreads = 4;
